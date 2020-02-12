@@ -1,9 +1,9 @@
 import React from 'react'
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
-import AddItemForm from './AddItemForm'
+import EditItemForm from './EditItemForm'
 
-export default function AddItemModal(props) {
+export default function EditItemModal(props) {
 
 
     return (
@@ -16,23 +16,24 @@ export default function AddItemModal(props) {
             >
             <Modal.Header>
                 <Modal.Title id="contained-modal-title-vcenter">
-                Add a to do item!
+                Edit Item
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <AddItemForm
-                onItemTitleChange={props.onItemTitleChange}
-                onItemDescriptionChange={props.onItemDescriptionChange}
-                onItemDateChange={props.onItemDateChange}
-                title={props.title}
-                description={props.description}
-                date={props.date}
+                <EditItemForm
+                fetchData={props.fetchData}
+                editTitle={props.editTitle}
+                editDescription={props.editDescription}
+                editDate={props.editDate}
+                editFormTitle={props.editFormTitle}
+                editFormDescription={props.editFormDescription}
+                editFormDate={props.editFormDate}
                 />
             </Modal.Body>
             <Modal.Footer>
             <Button
-            onClick={props.addItem}
-            >Add Item</Button>
+            onClick={props.submit}
+            >Submit</Button>
             <Button 
             variant="danger"
             onClick={props.modalHide}>Close</Button>

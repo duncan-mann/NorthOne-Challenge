@@ -3,7 +3,8 @@ import Form from 'react-bootstrap/Form'
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
-export default function AddItemForm(props) {
+export default function EditItemForm(props) {
+
 
     return (
         <div>
@@ -13,8 +14,8 @@ export default function AddItemForm(props) {
             <Form.Control 
             required
             placeholder="Enter Title" 
-            value={props.title}
-            onChange={event => props.onItemTitleChange(event.target.value)}
+            value={props.editFormTitle}
+            onChange={event => props.editTitle(event.target.value)}
             />
         </Form.Group>
 
@@ -23,18 +24,17 @@ export default function AddItemForm(props) {
             <Form.Control 
             required
             placeholder="Enter a Description" 
-            value={props.description}
-            onChange={event => props.onItemDescriptionChange(event.target.value)}
+            value={props.editFormDescription}
+            onChange={event => props.editDescription(event.target.value)}
             />
         </Form.Group>
 
         <Form.Group className="dateForm">
             <Form.Label>Due Date</Form.Label>
             <DatePicker
-            style={{width: '100%'}}
-            selected={props.date}
-            onChange={date => props.onItemDateChange(date)}
             className="datePicker"
+            selected={props.editFormDate}
+            onChange={date => props.editDate(date)}
             ></DatePicker>
         </Form.Group>
 
