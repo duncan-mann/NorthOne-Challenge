@@ -33,6 +33,7 @@ export default function ToDoList(props) {
             deleteItem={props.deleteItem}
             status={item.status}
             completedOn={item.completedOn}
+            editItem={props.editItem}
             >
             </ListItem>
         )

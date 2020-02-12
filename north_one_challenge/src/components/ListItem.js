@@ -41,6 +41,7 @@ export default function ListItem(props) {
             </div>
             <div>
             <FaWrench
+            onClick={() => props.editItem(props.id, props.listId)}
             style={{'marginRight': 10}}
             />{completeIcon}</div>
             </div>
