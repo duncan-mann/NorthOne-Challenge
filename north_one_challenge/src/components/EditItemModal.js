@@ -31,6 +31,9 @@ export default function EditItemModal(props) {
                 editTitle={props.editTitle}
                 editDescription={props.editDescription}
                 editDate={props.editDate}
+                editFormTitle={props.editFormTitle}
+                editFormDescription={props.editFormDescription}
+                editFormDate={props.editFormDate}
                 />
             </Modal.Body>
             <Modal.Footer>

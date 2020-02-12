@@ -5,7 +5,6 @@ import "react-datepicker/dist/react-datepicker.css";
 
 export default function EditItemForm(props) {
 
-    const {title, description, status, date} = props.fetchData();
 
     return (
         <div>
@@ -14,7 +13,7 @@ export default function EditItemForm(props) {
             <Form.Label>Title</Form.Label>
             <Form.Control 
             placeholder="Enter Title" 
-            value={title}
+            value={props.editFormTitle}
             onChange={event => props.editTitle(event.target.value)}
             />
         </Form.Group>
@@ -23,7 +22,7 @@ export default function EditItemForm(props) {
             <Form.Label>Description</Form.Label>
             <Form.Control 
             placeholder="Enter a Description" 
-            value={description}
+            value={props.editFormDescription}
             onChange={event => props.editDescription(event.target.value)}
             />
         </Form.Group>
@@ -31,7 +30,7 @@ export default function EditItemForm(props) {
         <Form.Group controlId="formBasicPassword">
             <Form.Label>Due Date</Form.Label>
             <DatePicker
-            selected={date}
+            selected={props.editFormDate}
             onChange={date => props.editDate(date)}
             ></DatePicker>
         </Form.Group>
