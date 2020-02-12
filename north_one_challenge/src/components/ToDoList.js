@@ -1,5 +1,6 @@
 import React from 'react'
 import Button from 'react-bootstrap/Button'
+import ListItem from './ListItem'
 
 
 export default function ToDoList(props) {
@@ -19,13 +20,23 @@ export default function ToDoList(props) {
         }
     }
 
+    let toDoItems = props.items.map(item => {
+        return (
+            <ListItem
+            title={item.title}
+            description={item.description}
+            date={item.date}>
+            </ListItem>
+        )
+    })
+
     return (
         <div style={styles.listDiv}>
             <div style={styles.header}>
             <h3>{props.title}</h3>
             <Button onClick={props.showItemModal}>+</Button>
             </div>
-
+        {toDoItems}
         </div>
     )
 }
