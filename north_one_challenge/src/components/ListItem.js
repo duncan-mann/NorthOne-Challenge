@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaTrash, FaCheckCircle, FaWrench, FaRegClock } from "react-icons/fa";
+import { FaTrash, FaCheckCircle, FaWrench, FaRegClock, FaUndoAlt } from "react-icons/fa";
 
 export default function ListItem(props) {
 
@@ -30,7 +30,7 @@ export default function ListItem(props) {
 
     let dateString = (props.status === 'incomplete') ? props.date.toString().slice(0,15) : props.completedOn;
     let footerIcon = (props.status === 'incomplete') ? <FaRegClock style={{'marginBottom': 3}}/> : <FaCheckCircle/>;
-
+    let completeIcon = (props.status === 'incomplete') ? <FaCheckCircle onClick={() => props.completeItem(props.id, props.listId, 'complete')} /> : <FaUndoAlt onClick={() => props.completeItem(props.id, props.listId, 'incomplete')} />;
 
     return (
         <div style={styles.listItem}>
@@ -42,9 +42,7 @@ export default function ListItem(props) {
             <div>
             <FaWrench
             style={{'marginRight': 10}}
-            /><FaCheckCircle
-            onClick={() => props.completeItem(props.id, props.listId)}
-            /></div>
+            />{completeIcon}</div>
             </div>
             <div style={styles.itemHeader}>
             <p>
