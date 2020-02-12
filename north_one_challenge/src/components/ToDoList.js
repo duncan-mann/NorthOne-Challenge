@@ -34,7 +34,7 @@ export default function ToDoList(props) {
         <div style={styles.listDiv}>
             <div style={styles.header}>
             <h3>{props.title}</h3>
-            <Button onClick={props.showItemModal}>+</Button>
+            <Button onClick={() => props.showItemModal(props.id)}>+</Button>
             </div>
         {toDoItems}
         </div>
