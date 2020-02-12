@@ -8,7 +8,7 @@ export default function ListItem(props) {
             borderRadius: '5px',
             width: '95%',
             height: '150px',
-            background: 'white',
+            background: (props.status === 'incomplete') ? 'white' : 'rgb(0, 77, 26, 0.6)',
             margin: '0 auto',
             marginTop: 10,
             paddingTop: 1,
@@ -23,7 +23,10 @@ export default function ListItem(props) {
             margin: 20
         }
     }
-    let dateString = props.date.toString().slice(0,15);
+
+    let dateString = (props.status === 'incomplete') ? props.date.toString().slice(0,15) : props.completedOn;
+    let footerIcon = (props.status === 'incomplete') ? <FaRegClock style={{'marginBottom': 3}}/> : <FaCheckCircle/>;
+
 
     return (
         <div style={styles.listItem}>
@@ -38,9 +41,9 @@ export default function ListItem(props) {
             </div>
             <p>{props.description}</p>
             <div style={styles.itemHeader}>
-            <p><FaRegClock
-            style={{'marginBottom': 3}}
-            />{`  ${dateString}`}</p>
+            <p>
+            {footerIcon}
+            {`  ${dateString}`}</p>
             <FaTrash/>
             </div>
         </div>
