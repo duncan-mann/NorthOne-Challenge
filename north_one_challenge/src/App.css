@@ -22,3 +22,14 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.dateForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.datePicker {
+  height: 40px;
+  border-radius: 5px;
+  width: 100%;
+}
