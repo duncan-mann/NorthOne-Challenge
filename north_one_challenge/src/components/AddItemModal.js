@@ -2,7 +2,7 @@ import React from 'react'
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 
-export default function ToDoListModal(props) {
+export default function AddItemModal(props) {
 
     let styles = {
         formInput: {
@@ -21,24 +21,15 @@ export default function ToDoListModal(props) {
             >
             <Modal.Header>
                 <Modal.Title id="contained-modal-title-vcenter">
-                Name your list!
+                Add a to do item!
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <input 
-                placeholder="Enter list name"
-                style={styles.formInput}
-                value={props.listInput}
-                onChange={event => props.onListInput(event.target.value)}
-                ></input>
             </Modal.Body>
             <Modal.Footer>
             <Button
-            onClick={props.addList}
-            >Add</Button>
-            <Button 
-                variant="danger"
-                onClick={props.modalHide}>Close</Button>
+            >Add Item</Button>
+            <Button onClick={props.modalHide}>Close</Button>
             </Modal.Footer>
             </Modal>
         </div>
