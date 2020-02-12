@@ -25,7 +25,8 @@ export default function ToDoList(props) {
             <ListItem
             title={item.title}
             description={item.description}
-            date={item.date}>
+            date={item.date}
+            >
             </ListItem>
         )
     })

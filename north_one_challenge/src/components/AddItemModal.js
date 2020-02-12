@@ -37,6 +37,7 @@ export default function AddItemModal(props) {
             </Modal.Body>
             <Modal.Footer>
             <Button
+            onClick={props.addItem}
             >Add Item</Button>
             <Button 
             variant="danger"

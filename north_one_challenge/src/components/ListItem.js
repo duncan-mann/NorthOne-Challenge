@@ -14,7 +14,7 @@ export default function ListItem(props) {
         <div style={styles.listItem}>
             <h5>{props.title}</h5>
             <p>{props.description}</p>
-            <p>{props.date}</p>
+            <p>{props.date.toString()}</p>
         </div>
     )
 }
