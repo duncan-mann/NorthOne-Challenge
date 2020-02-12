@@ -26,6 +26,7 @@ export default function ToDoListModal(props) {
             </Modal.Header>
             <Modal.Body>
                 <input 
+                required
                 placeholder="Enter list name"
                 style={styles.formInput}
                 value={props.listInput}

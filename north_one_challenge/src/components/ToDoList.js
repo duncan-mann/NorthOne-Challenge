@@ -1,6 +1,8 @@
 import React from 'react'
 import Button from 'react-bootstrap/Button'
 import ListItem from './ListItem'
+import { FaRegWindowClose } from "react-icons/fa";
+
 
 
 export default function ToDoList(props) {
@@ -18,12 +20,21 @@ export default function ToDoList(props) {
             'flex-direction': 'row',
             justifyContent: 'space-between',
             margin: 20
+        },
+        deleteIconDiv: {
+            display: 'flex',
+            'flex-direction': 'row'
+        },
+        deleteIcon: {
+            marginLeft: 10,
+            marginTop: 10
         }
     }
 
     let toDoItems = props.items.map(item => {
         return (
             <ListItem
+            key={item.id}
             id={item.id}
             listId={props.id}
             title={item.title}
@@ -42,7 +53,13 @@ export default function ToDoList(props) {
     return (
         <div style={styles.listDiv}>
             <div style={styles.header}>
+                <div style={styles.deleteIconDiv}>
             <h3>{props.title}</h3>
+            <FaRegWindowClose
+            style={styles.deleteIcon}
+            onClick={() => props.deleteList(props.id)}
+            />
+                </div>
             <Button 
             variant="outline-primary"
             onClick={() => props.showItemModal(props.id)}>+</Button>

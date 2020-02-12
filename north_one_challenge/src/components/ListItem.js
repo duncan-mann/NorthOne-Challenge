@@ -18,13 +18,13 @@ export default function ListItem(props) {
         },
         itemHeader: {
             display: 'flex',
-            'flex-direction': 'row',
+            flexDirection: 'row',
             justifyContent: 'space-between',
             margin: 20,
             marginBottom: 0
         },
         alignLeft: {
-            'text-align': 'left'
+            textAlign: 'left'
         }
     }
 

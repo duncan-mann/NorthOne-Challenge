@@ -11,6 +11,7 @@ export default function AddItemForm(props) {
         <Form.Group controlId="formBasicEmail">
             <Form.Label>Title</Form.Label>
             <Form.Control 
+            required
             placeholder="Enter Title" 
             value={props.title}
             onChange={event => props.onItemTitleChange(event.target.value)}
@@ -20,23 +21,23 @@ export default function AddItemForm(props) {
         <Form.Group controlId="formBasicPassword">
             <Form.Label>Description</Form.Label>
             <Form.Control 
+            required
             placeholder="Enter a Description" 
             value={props.description}
             onChange={event => props.onItemDescriptionChange(event.target.value)}
             />
         </Form.Group>
 
-        <Form.Group controlId="formBasicPassword">
+        <Form.Group className="dateForm">
             <Form.Label>Due Date</Form.Label>
             <DatePicker
+            style={{width: '100%'}}
             selected={props.date}
             onChange={date => props.onItemDateChange(date)}
+            className="datePicker"
             ></DatePicker>
         </Form.Group>
 
-        <Form.Group controlId="formBasicCheckbox">
-            <Form.Check type="checkbox" label="Check me out" />
-        </Form.Group>
         </Form>   
         </div>
     )

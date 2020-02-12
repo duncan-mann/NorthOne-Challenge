@@ -5,12 +5,6 @@ import AddItemForm from './AddItemForm'
 
 export default function AddItemModal(props) {
 
-    let styles = {
-        formInput: {
-            width: '100%',
-            border: 'none'
-        }
-    };
 
     return (
         <div>

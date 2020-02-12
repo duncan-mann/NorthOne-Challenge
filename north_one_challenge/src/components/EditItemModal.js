@@ -5,12 +5,6 @@ import EditItemForm from './EditItemForm'
 
 export default function EditItemModal(props) {
 
-    let styles = {
-        formInput: {
-            width: '100%',
-            border: 'none'
-        }
-    };
 
     return (
         <div>
@@ -38,7 +32,7 @@ export default function EditItemModal(props) {
             </Modal.Body>
             <Modal.Footer>
             <Button
-            onClick={undefined}
+            onClick={props.submit}
             >Submit</Button>
             <Button 
             variant="danger"
