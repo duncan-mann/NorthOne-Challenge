@@ -30,6 +30,7 @@ export default function ToDoList(props) {
             description={item.description}
             date={item.date}
             completeItem={props.completeItem}
+            deleteItem={props.deleteItem}
             status={item.status}
             completedOn={item.completedOn}
             >

@@ -20,7 +20,11 @@ export default function ListItem(props) {
             display: 'flex',
             'flex-direction': 'row',
             justifyContent: 'space-between',
-            margin: 20
+            margin: 20,
+            marginBottom: 0
+        },
+        alignLeft: {
+            'text-align': 'left'
         }
     }
 
@@ -31,7 +35,10 @@ export default function ListItem(props) {
     return (
         <div style={styles.listItem}>
             <div style={styles.itemHeader}>
-            <h5>{props.title}</h5>
+            <div>
+            <h5 style={styles.alignLeft}>{props.title}</h5>
+            <p style={styles.alignLeft}>{props.description}</p>
+            </div>
             <div>
             <FaWrench
             style={{'marginRight': 10}}
@@ -39,12 +46,15 @@ export default function ListItem(props) {
             onClick={() => props.completeItem(props.id, props.listId)}
             /></div>
             </div>
-            <p>{props.description}</p>
             <div style={styles.itemHeader}>
             <p>
             {footerIcon}
             {`  ${dateString}`}</p>
-            <FaTrash/>
+            <FaTrash
+            onClick={() => {
+                console.log('clicking button');
+                props.deleteItem(props.id, props.listId)}}
+            />
             </div>
         </div>
     )
